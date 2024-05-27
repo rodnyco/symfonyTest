@@ -32,15 +32,6 @@ http://127.0.0.1:8337/purchase
 }
 ```
 
-TODO:
-- check declare strict types
-- add git
-- add .env.example
-- add nginx
-- make couponCode optional
-- extend readme
-- push to github
-
 При успешном выполнении запроса следует возвращать HTTP ответ с кодом 200.
 
 При неверных входных данных или ошибках оплаты следует возвращать HTTP ответ с кодом 400 и JSON объект с описанием ошибок.
