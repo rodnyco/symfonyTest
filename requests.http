@@ -1,0 +1,44 @@
+### Calculate Price - Success calculate for product with id = 1 and coupon P50
+POST http://127.0.0.1:8337/calculate-price
+Accept: application/json
+Content-Type: application/json
+
+{
+  "product": 1,
+  "taxNumber": "DE123456789",
+  "couponCode": "P50"
+}
+
+### Calculate Price - Success calculate for product with id = 2 and coupon F5
+POST http://127.0.0.1:8337/calculate-price
+Accept: application/json
+Content-Type: application/json
+
+{
+  "product": 2,
+  "taxNumber": "DE123456789",
+  "couponCode": "F5"
+}
+
+### Calculate Price - Success calculate for product with id = 2 and coupon F5
+POST http://127.0.0.1:8337/calculate-price
+Accept: application/json
+Content-Type: application/json
+
+{
+  "product": 2,
+  "taxNumber": "SF123",
+  "couponCode": "F5"
+}
+
+### Execute Purchase
+POST http://127.0.0.1:8337/purchase
+Accept: application/json
+Content-Type: application/json
+
+{
+  "product": 1,
+  "taxNumber": "IT12345678900",
+  "couponCode": "F15",
+  "paymentProcessor": "paypal"
+}

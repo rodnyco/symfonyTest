@@ -1,0 +1,24 @@
+services:
+    sio_test:
+        user: app
+        build:
+            context: .
+            args:
+                USER_ID: ${USER_ID}
+        ports:
+            - "8337:8337"
+        volumes:
+            - .:/app:rw
+        environment:
+            - APP_ENV=dev
+    db:
+        image: postgres
+        restart: always
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_USER: sio
+            POSTGRES_PASSWORD: sio
+        volumes:
+            - ./db/:/docker-entrypoint-initdb.d
+            - ./db/data/:/var/lib/postgresql/data
