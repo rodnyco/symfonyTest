@@ -3,6 +3,11 @@
 make init
 ```
 
+Запуск миграций:
+```
+make migrate
+```
+
 Заполнение бд:
 ```
 make dump

@@ -35,11 +35,14 @@ console: ## Login in console.
 install:
 	${DC_RUN} composer install
 
+migrate:
+	${DC_EXEC} php bin/console doctrine:migrations:migrate
+
 dump:
 	${DC} exec -it db psql -U sio -d sio -f /docker-entrypoint-initdb.d/dump.sql
 
 test:
-	${DC_EXEC} php ./bin/phpunit
+	${DC_EXEC} php bin/phpunit
 
 success-message:
 	@echo "You can now access the application at http://localhost:8337"
